@@ -1,5 +1,7 @@
 package ru.netology
 
+import Attachment
+
 
 data class Post(
     var id: Int = 0,
@@ -28,7 +30,8 @@ data class Post(
     val postponedId: Int = 0,
     val postSource: PostSource? = PostSource(),
     val geo: Geo? = Geo(),
-    val copyHistory: Array<Reposts> = emptyArray()
+    val copyHistory: Array<Reposts> = emptyArray(),
+    val attachments: Array<Attachment> = emptyArray()
 )
 
 data class Comments(
