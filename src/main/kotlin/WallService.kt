@@ -1,8 +1,10 @@
-package ru.netology
+import ru.netology.Post
 
 class WallService {
     private var posts = emptyArray<Post>()
     private var lastId = 1
+    private var comments = emptyArray<Comment>()
+
 
     fun add(post: Post): Post {
         posts += post.copy(id = lastId)
@@ -20,6 +22,15 @@ class WallService {
             }
         return false
     }
-
+    fun createComment(comment: Comment): Boolean {
+        for (i in posts.indices) {
+            if (posts[i].id == comment.postId) {
+                comments += comment
+                return true
+            }
+        }
+        throw PostNotFoundException()
+    }
 }
+
 

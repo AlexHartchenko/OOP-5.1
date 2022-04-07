@@ -2,6 +2,9 @@ package ru.netology
 
 import Attachment
 
+enum class PostType {
+    Post, Copy, Reply, Postpone, Suggest
+}
 
 data class Post(
     var id: Int = 0,
