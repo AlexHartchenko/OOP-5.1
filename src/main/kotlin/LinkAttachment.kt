@@ -1,10 +1,10 @@
-class LinkAttachment : Attachment {
-    override val type: String = "Document"
-
-    data class Link(
-        val url: String,
-        val title: String,
-        val caption: String,
-        val description: String
-    )
+data class LinkAttachment(override val type: String = "Link", val link: Link) : Attachment {
 }
+
+
+data class Link(
+    val url: String,
+    val title: String,
+    val caption: String,
+    val description: String
+)
